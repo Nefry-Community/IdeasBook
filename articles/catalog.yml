@@ -3,16 +3,16 @@ PREDEF:
 
 # この順で記事が生成される
 CHAPS:
-  - 1easyNavi.re
+  - 1easyNavi.re:
     - 11GroveEasy.re
     - 12GroveHard.re
     - 13GPIO.re
     - 14Display.re
-  - 2createNavi.re
+  - 2createNavi.re:
     - 21Train.re
     - 22a100yenShop.re
     - 23Water.re
-  - 3Network.re
+  - 3Network.re:
     - 31Ambient.re
     - 32AWS.re
     - 33Azure.re

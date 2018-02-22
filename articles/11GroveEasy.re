@@ -1,3 +1,3 @@
-= GPIOをつかってみる
+= 11GroveEasy
 
 NefryのGPIOをつかってみよ

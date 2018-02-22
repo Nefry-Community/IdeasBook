@@ -6,3 +6,4 @@ articles/*.html
 .sass-cache
 publish/
 articles/webroot/
+npm-debug.log

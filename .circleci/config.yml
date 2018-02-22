@@ -9,6 +9,9 @@ jobs:
           keys:
             - npm-cache-{{ checksum "package-lock.json" }}
       - run:
+          name: sass install
+          command: gem install sass -v "3.4.25"
+      - run:
           name: Setup
           command: npm install
       - save_cache:
@@ -22,11 +25,11 @@ jobs:
           name: Build PDF
           command: npm run pdf
       - store_artifacts:
-          path: ./articles/Nefry-Template.pdf
-          destination: Nefry-Template.pdf
+          path: ./articles/NefryBook.pdf
+          destination: NefryBook.pdf
       - run:
           name: chmod permissions
           command: chmod +x ./upload_dropbox.sh
       - run:
           name: Upload to Dropbox
-          command: ./upload_dropbox.sh ./articles/Nefry-Template.pdf ${DROPBOX_TOKEN}
+          command: ./upload_dropbox.sh ./articles/NefryBook.pdf ${DROPBOX_TOKEN}

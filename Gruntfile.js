@@ -24,7 +24,6 @@ module.exports = grunt => {
 					`${articles}/*.pdf`,
 					`${articles}/*.epub`,
 					`${articles}/*.html`,
-					`${articles}/*.md`,
 					`${articles}/*.xml`,
 					`${articles}/*.txt`
 				]

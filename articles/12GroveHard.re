@@ -795,7 +795,7 @@ Altitudeの値がちょっと変ですが、温度、湿度、気圧はだいた
 
 === プログラムの書き方の統一
 
- * delay() or Nefry.ndelay()　（delay()を全てNefry.ndelay()に変更した方が良いのか？）
+ * delay() or Nefry.ndelay()　（delay()を全てNefry.ndelay()に変更した方が良いのか？）。ndelayの説明は誰のパートで行うのが良いのか？
 
 === tableを使うかどうか
 

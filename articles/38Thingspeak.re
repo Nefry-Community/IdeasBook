@@ -2,7 +2,7 @@
 = ThingSpeakにデータを送ってみる
 
 
-ThingSpeak（https://thingspeak.com/）は、マイコンなどからのセンサーデータを収取し、グラフ化やMATLABを使って分析を行えるだけでなく、Twitterなどの別のサービスへのアクションを行えるサービスです。
+ThingSpeak（https://thingspeak.com/）は、マイコンなどからのセンサーデータを収取し、グラフ化やMATLABを使って分析を行えるだけでなく、Twitterなどの別のサービスへのアクションを行えるサービスです。この章では、NefryからThingSpeakライブラリをつかって、ThingSpeakにデータを送り、それを可視化する方法を紹介します。
 
 
 
@@ -10,6 +10,8 @@ ThingSpeak（https://thingspeak.com/）は、マイコンなどからのセン�
 //}
 
 
+
+== チャネルを作成する
 
 
 ThingSpeakにセンサーデータをアップロードするには、まずチャネルを作成する必要があります。
@@ -30,6 +32,8 @@ ThingSpeakにセンサーデータをアップロードするには、まずチ�
 //}
 
 
+
+== データを送ってみる
 
 
 Nefry BTからThingSpeakにデータをアップロードする際は、チャネルのIDとライトAPIキーが必要となります。同じチャネルのフィールドであれば、同じライトキーを使うことになります。
@@ -59,3 +63,33 @@ void loop() {
   delay(20000);
 }
 //}
+
+
+@<tt>{NefryThingSpeak.h}をincludeして、@<tt>{begin()}関数でチャネルの指定をし、@<tt>{setWriteAPIKey()}関数でライトAPIキーを設定すれば、ThingSpeakにデータを送ることができます。@<tt>{writeField()}でデータを送りたいフィールドとデータを指定して送信します。
+
+
+== 送ったデータを見てみる
+
+
+データの可視化は、チャネルの詳細ページから可能です。
+
+
+
+//image[thingspeak_add_visualization][ThingSpeakのAPIキー]{
+//}
+
+
+
+
+@<tt>{Add Visualizations}というメニューがあるので、それを押すだけ。
+
+
+
+//image[thingspeak_visualization][ThingSpeakのAPIキー]{
+//}
+
+
+
+
+簡易的ではありますが、フィールドに送られたデータを簡単に可視化する事ができました。
+

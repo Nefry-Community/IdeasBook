@@ -7,3 +7,6 @@ articles/*.html
 publish/
 articles/webroot/
 npm-debug.log
+
+*.iml
+.idea

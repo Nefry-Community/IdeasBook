@@ -1,17 +1,16 @@
+# ティスプレイを触ってみる
 
-= ティスプレイを触ってみる
-
-
-Nefry BTのディスプレイの表示も@<tt>{NefryDisplay.h}をincludeすることでプログラム可能になります。
+Nefry BTのディスプレイの表示も`NefryDisplay.h`をincludeすることでプログラム可能になります。
 
 
-== 簡単な使い方
+
+## 簡単な使い方
 
 
-たとえば、このように@<tt>{NefryDisplay#print()}を使うと、簡単にディスプレイに好きな文字列を表示することができます。
+たとえば、このように`NefryDisplay#print()`を使うと、簡単にディスプレイに好きな文字列を表示することができます。
 
 
-//emlist{
+```
 #include <NefryDisplay.h>
 
 void setup() {
@@ -22,19 +21,17 @@ void setup() {
 void loop() {
 
 }
-//}
+```
 
 
-//image[display1][ディスプレイライブラリの例]{
-//}
-
+![ディスプレイライブラリの例](display1)
 
 
 
 もし、ディスプレイの横幅より長い文字列を入力しても、自動でスクロール表示してくれます。
 
 
-//emlist{
+```
 #include <NefryDisplay.h>
 
 void setup() {
@@ -45,19 +42,16 @@ void setup() {
 void loop() {
 
 }
-//}
+```
 
 
-//image[display2][長い文字列を表示したとき]{
-//}
-
-
+![長い文字列を表示したとき](display2)
 
 
 ただし、ディスプレイに表示できるのは3行までで、4行以上表示しようとすると、最後に表示しようとした3行分が表示されます。
 
 
-//emlist{
+```
 #include <NefryDisplay.h>
 
 void setup() {
@@ -71,33 +65,28 @@ void setup() {
 void loop() {
 
 }
-//}
+```
 
 
-//image[display3][4行以上の文字列を表示したとき]{
-//}
+![4行以上の文字列を表示したとき](display3)
 
 
+たとえば、「P」「O」「K」「I」「O」と表示しようとしたときは、最後の3行である **「K」「I」「O」** だけが表示される事になります。
 
 
-たとえば、「P」「O」「K」「I」「O」と表示しようとしたときは、最後の3行である @<strong>{「K」「I」「O」} だけが表示される事になります。
+このように、`NefryDisplay#print()`は非常に便利な関数です。実行中のプログラムのログを表示したり、表示した文字列が3行以下の場合におすすめです。
 
 
-
-このように、@<tt>{NefryDisplay#print()}は非常に便利な関数です。実行中のプログラムのログを表示したり、表示した文字列が3行以下の場合におすすめです。
-
-
-== 高度な使い方
+## 高度な使い方
 
 
-もう少し、凝った表示をしたいときは、@<tt>{NefryDisplay#autoScrollFunc()}で表示したい要素を記述した関数を渡す方法があります。
+もう少し、凝った表示をしたいときは、`NefryDisplay#autoScrollFunc()`で表示したい要素を記述した関数を渡す方法があります。
 
 
+たとえば、好きな位置に文字列を表示させたいときは、`NefryDisplay#drawString()`を使います。
 
-たとえば、好きな位置に文字列を表示させたいときは、@<tt>{NefryDisplay#drawString()}を使います。
 
-
-//emlist{
+```
 #include <NefryDisplay.h>
 
 void setup() {
@@ -115,23 +104,20 @@ void pokioPrint() {
   NefryDisplay.drawString(40, 30, "POKIO");
   NefryDisplay.drawString(60, 45, "POKIO");
 }
-//}
+```
 
 
-//image[display4][好きな位置に文字を表示する]{
-//}
+![好きな位置に文字を表示する](display4)
 
 
-
-
-このように、「POKIO」という文字を好きな位置に配置できました。また、@<tt>{NefryDisplay#autoScrollFunc()}を使う場合は@<tt>{Nefry PrintDialog}という固定で表示される文字列もないので、ディスプレイ全体をフルに使うことができます。
+このように、「POKIO」という文字を好きな位置に配置できました。また、`NefryDisplay#autoScrollFunc()`を使う場合は`Nefry PrintDialog`という固定で表示される文字列もないので、ディスプレイ全体をフルに使うことができます。
 
 
 
 もちろん、文字列以外にも図形を表示できます。
 
 
-//emlist{
+```
 #include <NefryDisplay.h>
 
 void setup() {
@@ -153,14 +139,10 @@ void pokioPrint() {
   NefryDisplay.drawVerticalLine(105, 5, 15);
   NefryDisplay.drawVerticalLine(110, 5, 15);
 }
-//}
+```
 
 
-//image[display5][図形を表示する]{
-//}
-
-
+![図形を表示する](display5)
 
 
 このように、少し凝った表示も簡単に実装することができます。
-

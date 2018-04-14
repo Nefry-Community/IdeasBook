@@ -2,7 +2,7 @@
 = Fastsensingにデータを送ってみる
 
 
-Fastsensing（https://fastsensing.com/ja/）は、専用のデバイスやマイコンボードからのセンサーデータを受信し、グラフ化や異常検知をしてくれるサービスです。
+Fastsensing（https://fastsensing.com/ja/）は、専用のデバイスやマイコンボードからのセンサーデータを受信し、グラフ化や異常検知をしてくれるサービスです。この章では、NefryからFastSensingライブラリをつかって、Fastsensingにデータを送り、それを可視化する方法を紹介します。
 
 
 
@@ -83,6 +83,10 @@ void loop() {
   delay(10000);
 }
 //}
+
+
+@<tt>{NefryFastSensing.h}をincludeした上で、@<tt>{NefryFastSensing}クラスのインスタンスを宣言します。@<tt>{begin()}関数で、デバイストークンとチャネルトークンを使って初期化をすれば準備完了です。@<tt>{setValue()}関数で、送り先のチャネルと、チャネルに送るデータをセットして、@<tt>{push()}でFastsensingに送信します。
+
 
 == 送ったデータを見てみる
 

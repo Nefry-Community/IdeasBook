@@ -6,7 +6,7 @@ CHAPS:
   - 1easyNavi.re:
     - 10StartGrove.re
     - 11GroveInputDigital.re
-    - 12GroveOutoutDigital.re
+    - 12GroveOutputDigital.re
     - 13GroveAnalog.re
     - 14GroveI2C.re
     - 14Display.re

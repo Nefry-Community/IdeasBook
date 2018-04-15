@@ -14,7 +14,7 @@ SCLとSDAが接続されいて、SCLは黄色線、SDAは白線です。
 
 SCLとSDAが接続されるコネクターはプログラムで変更可能です。変更方法は後述します。
 
-==== I2C温度・湿度センサーモジュールのプログラム
+== I2C温度・湿度センサーモジュールのプログラム
 Seeed Studio社が公開しているプログラムをそのまま使ってみます。
 Seeed Studio社のGrove WikiのSHT31ページ（http://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/）
 //image[410-WEB-SeeedWiki-SHT31][Seeed Studio社のGrove Wikiページ][scale=0.5]
@@ -36,8 +36,8 @@ Seeed Studio社のGrove WikiのSHT31ページ（http://wiki.seeedstudio.com/Grov
 
 Nefry BT用にプログラムを変更を行います。変更は2箇所だけです。
 
- * 冒頭に @<b>{#include <Nefry.h>}を追加します。
- * @<b>{setup()}ルーチン内にある@<b>{Serial.begin(9600);}と@<b>{while(!Serial);}をコメントアウトします。
+ * 冒頭に @<code>{#include <Nefry.h>}を追加します。
+ * @<code>{setup()}ルーチン内にある@<code>{Serial.begin(9600);}と@<code>{while(!Serial);}をコメントアウトします。
 変更後のプログラムはこうなります。
 
 //image[470-IDE-SHT31-Nefry][変更後のSHT31プログラム][scale=0.9]
@@ -71,9 +71,17 @@ void loop() {
 }
 //}
 
-次にArduino IDEのNefry BTボードマネージャーをv1.2.1以降にしておきます。
-Nefry BT R2はV1.2.0以前だとI2C制御部分のプログラムがうまく動作しません。
-ボードマネージャーのアップデートは次の手順で行います。
+プログラムを実行すると、シリアルモニターに測定結果が表示されます。
+
+//image[480-MONITOR-SHT31][SHT31プログラムのシリアルモニター表示例][scale=0.9]
+
+
+====[column] Nefry Libraryのバージョンを上げよう
+Nefry BT R2はライブラリのバージョンがV1.2.0以前だとI2C制御部分のプログラムがうまく動作しません。
+
+その修正が入ったライブラリのバージョンをv1.2.1以降にしておきます。
+
+アップデートは次の手順で行います。
 
  1. Arduino IDEの「ツールメニュー ＞ ボード ＞ ボードマネージャ」を選ぶ
  2. 検索欄にnefryを記入する
@@ -81,19 +89,7 @@ Nefry BT R2はV1.2.0以前だとI2C制御部分のプログラムがうまく動
  4. プルダウンメニューから1.2.1を選択する
  5. 更新ボタンをクリックする
 
-//image[370-IDE-BoardManager-Nefry-v121][ボードマネージャーの更新][scale=0.9]
+//image[370-IDE-BoardManager-Nefry-v121][ボードマネージャーの更新][scale=0.9]{
+//}
 
-プログラムを実行すると、シリアルモニターに測定結果が表示されます。
-
-//image[480-MONITOR-SHT31][SHT31プログラムのシリアルモニター表示例][scale=0.9]
-
-
-==== 他のGroveコネクターを使う方法
-他のGroveコネクターを使うには、I2Cの通信に使う2本の通信線SCLとSDAのGPIOピン番号を変更する必要があります。
-以下では、GroveコネクターD2に変更する例を説明します。
-
- 1. Arduino IDEで「SHHT31.cpp」タブを選択する。
- 2. 7行目にある@<b>{Wire.begin();}を、@<b>{Wire.begin(D3, D2);}に変更します。@<b>{begin()}の引数の並び順は、@<b>{begin(SDA, SCL)}です。
-
-
-//image[490-IDE-SHT31-Wire-begin][GroveコネクターD2を使うためのプログラム変更][scale=0.7]
+====[/column]

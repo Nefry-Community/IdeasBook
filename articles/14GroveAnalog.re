@@ -9,8 +9,8 @@ Nefry BTでは3.3Vをモジュールに供給しているので、ノブを回�
 
 ==== ボリュームモジュールのプログラム
 ボリュームモジュールから読み込んだ値をシリアルモニターに表示するプログラムです。
-値の読み込みは@<b>{analogRead(PIN)}関数で行なっています。
-モジュールを接続するGroveコネクターに合わせて、PINの@<b>{#define}宣言をしてください。
+値の読み込みは@<code>{analogRead(PIN)}関数で行なっています。
+モジュールを接続するGroveコネクターに合わせて、PINの@<code>{#define}宣言をしてください。
 
 //list[Nefry_GROVE_RotaryAngleSensor][ボリュームのプログラム]{
 #include <Nefry.h>

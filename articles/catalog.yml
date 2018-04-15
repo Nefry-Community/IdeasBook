@@ -7,8 +7,9 @@ CHAPS:
     - 10StartGrove.re
     - 11GroveInputDigital.re
     - 12GroveOutputDigital.re
-    - 13GroveAnalog.re
-    - 14GroveI2C.re
+    - 13GroveOutputPWM.re
+    - 14GroveAnalog.re
+    - 15GroveI2C.re
     - 14Display.re
   - 2createNavi.re:
     - 21Train.re

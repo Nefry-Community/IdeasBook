@@ -121,7 +121,7 @@ PWM（Pulse Width Modulation）はデジタル信号が０になっている時�
 
 LEDの明るさの制御やサーボモーターの回転角度の制御がその代表例です。
 
-@<chap>{1313GroveOutputPWM}を参考にしてください。
+@<chap>{13GroveOutputPWM}を参考にしてください。
 
 === アナログモジュール
 入出力する値を電圧の高さで表現するモジュールです。

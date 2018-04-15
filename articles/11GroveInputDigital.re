@@ -1,24 +1,20 @@
-= ボタンモジュール
-ボタンモジュールはデジタル入力モジュールです。ボタンが押されている時は１（HIGH）を返し、離されている時は０（LOW）を返します。
+= Groveのデジタル入力（ボタンモジュール）
+ボタンモジュールはデジタル入力モジュールです。
+
+ボタンが押されている時は１（HIGH）を返し、離されている時は０（LOW）を返します。
 //image[070-GROVE-MODULE-BUTTON-Fukui][Groveボタンモジュール][scale=0.3]{
 //}
 
- * Groveボタン https://www.switch-science.com/catalog/801/
+ * Groveボタン @<href>{https://www.switch-science.com/catalog/801/}
 
 == ボタンモジュールのプログラム
 シリアルモニターに、通常は0が表示され、ボタンを押している間だけ1が表示されるプログラムです。
-モジュールを接続するGroveコネクターに合わせて、PINの#define文のピン名を変更してください。
 
-プログラムの中身はとても単純です。
-@<code>{setup()} ルーチン内で @<code>{pinMode(PIN, INPUT)} を実行してピンの入出力方向を@<b>{入力}に設定します。
-次に @<code>{loop()} ルーチン内で @<code>{digitalRead(PIN)} を使ってピンの値を取得します。
-ボタンの状態に応じて0か1が返されます。
-返された値を @<code>{Serial.println()} 関数でシリアルモニターに出力します。
+GroveソケットのD2と書かれたところにGroveモジュールを接続してください。
 
-//list[NefryBT_GROVE_Button][ボタンモジュールのプログラム]{
-#include <Nefry.h>
+//emlist[NefryBT_GROVE_Button][ボタンモジュールのプログラム]{
 //Groveケーブルを接続するGroveコネクターを１つ選んで#define文に記載してください。
-// Nefry BT無印の場合： D0, D2, A0, A2
+// Nefry BT無印の場合： D0, D2, A0, A2　(注：D0を使うことはできません。)
 // Nefry BT R2の場合： D0, D2, D5, A1  (注：A0を使うときはA1を記載します。)
 #define PIN D2
 
@@ -33,6 +29,19 @@ void loop() {
   delay(300);
 }
 //}
+
+=== プログラム説明
+
+プログラムの説明をしていきます。
+
+@<code>{setup()} ルーチン内で @<code>{pinMode(PIN, INPUT)} を実行してピンの入出力方向を@<b>{入力}に設定します。
+
+次に @<code>{loop()} ルーチン内で @<code>{digitalRead(PIN)} を使ってピンの値を取得します。
+ボタンの状態に応じて0か1が返されます。
+
+返された値を @<code>{Serial.println()} 関数でシリアルモニターに出力します。
+
+=== 動作結果
 
 シリアルモニターには次のように入力結果が表示されます。
 
@@ -60,15 +69,15 @@ D5	OK
 A0	OK	注：R2用のプログラムでは、A0ではなくA1を使います。
 //}
 
-
 == 他のデジタル入力モジュール
 他のデジタル入力モジュールには、タッチセンサー、傾きセンサー、磁気スイッチ、水センサーなどがあります。
-いずれもボタンモジュールのプログラムがそのまま使えます。
 
- * Groveタッチセンサー https://www.switch-science.com/catalog/811/
- * Grove傾きセンサー https://www.switch-science.com/catalog/803/
- * Grove磁気スイッチ https://www.switch-science.com/catalog/809/
- * Grove水センサー https://www.switch-science.com/catalog/817/
+いずれも上記のプログラムがそのまま使えます。
+
+ * Groveタッチセンサー @<href>{https://www.switch-science.com/catalog/811/}
+ * Grove傾きセンサー @<href>{https://www.switch-science.com/catalog/803/}
+ * Grove磁気スイッチ @<href>{https://www.switch-science.com/catalog/809/}
+ * Grove水センサー @<href>{https://www.switch-science.com/catalog/817/}
 
 //image[090_GROVE-MODULE-TOUCH-Fuki][Groveタッチセンサーモジュール][scale=0.3]{
 //}

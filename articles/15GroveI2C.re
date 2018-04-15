@@ -1,18 +1,13 @@
-= I2C温度・湿度センサーモジュール
-I2C接続の温度・湿度センサー（SHT31）を使ってみましょう。
+= GroveのI2C（温度・湿度センサーモジュール）
+
+温度・湿度センサー（SHT31）はI2C接続のモジュールです。
 
 //image[400-GROVE-MODULE-SHT31][Grove温度・湿度センサー(SHT31)][scale=0.4]
 
- * Grove温湿度センサー（SHT31） https://www.switch-science.com/catalog/2853/
+ * Grove温湿度センサー（SHT31） @<href>{https://www.switch-science.com/catalog/2853/}
 
 I2C接続ではSCLとSDAという2本の信号線を使います。
-Nefry BT無印とNefry BT R2のどちらもdefault設定ではGrove D0コネクターに
-SCLとSDAが接続されいて、SCLは黄色線、SDAは白線です。
-
-//image[290-NefryBT-R1-GROVE-GPIO-I2C-PIN][Nefy BT無印のI2C接続コネクター][scale=0.7]
-//image[300-NefryBT-R2-GROVE-GPIO-I2C-PIN][Nefy BT R2のI2C接続コネクター][scale=0.7]
-
-SCLとSDAが接続されるコネクターはプログラムで変更可能です。変更方法は後述します。
+Nefry BTでは、Grove D0コネクターにセンサーを繋いで使用します。
 
 == I2C温度・湿度センサーモジュールのプログラム
 Seeed Studio社が公開しているプログラムをそのまま使ってみます。
@@ -42,7 +37,7 @@ Nefry BT用にプログラムを変更を行います。変更は2箇所だけ�
 
 //image[470-IDE-SHT31-Nefry][変更後のSHT31プログラム][scale=0.9]
 
-//list[NefryBT_GROVE_SHT31][I2C温度・湿度計のプログラム]{
+//emlist[NefryBT_GROVE_SHT31][I2C温度・湿度計のプログラム]{
 #include <Nefry.h>
 #include <Arduino.h>
 #include <Wire.h>

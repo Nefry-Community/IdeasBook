@@ -1,7 +1,14 @@
-= PWMを使ってLEDの明るさを変える
-PWMは、次の図のような周期的なパルス信号を生成します。1になっている時間と0になっている時間の比率（デューティー比）
-を変えることで送信する電力を変化させます。LEDの点灯にPWMを使うと、1になっている時間が短いとLEDが暗くなり、
-長いと明るくなります。
+= GroveのモジュールをPWMで制御
+
+この章は、モジュールの紹介ではなくPWMでどのような制御ができるのか紹介していきます。
+
+== PWMとは
+
+PWMは、次の図のような周期的なパルス信号を生成します。
+
+1になっている時間と0になっている時間の比率（デューティー比）を変えることで送信する電力を変化させます。
+
+LEDの点灯にPWMを使うと、人の目では1になっている時間が短いとLEDが暗くなり、長いと明るくなったように見えます。
 
 //image[190-PWM-LED-Waveform-key-Fukui][PWMでLEDの明るさを制御][scale=0.8]{
 //}
@@ -11,7 +18,9 @@ PWMを使う場合、2つの値を指定します。
  * パルスの周期
  * デューティー比
 
-Nefry BTではLEDCライブラリでPWMを制御します。LEDCではこの2つの値を指定するために3つの値を使います。
+Nefry BTではLEDCライブラリを使い、PWMを制御します。
+
+LEDCではこの2つの値を指定するために3つの値を使います。
 
  * パルスの周期（Hzで指定）
  * 1周期に含まれる目盛の数（ビット数で指定。10bitなら1024目盛。最大は16bit。）
@@ -23,8 +32,12 @@ Nefry BTではLEDCライブラリでPWMを制御します。LEDCではこの2つ
 //}
 
 ==== LEDの明るさを変えるプログラム
-//list[NefryBT_GROVE_PWM_LED][LEDの明るさを変えるプログラム]{
-#include <Nefry.h>
+
+D2に接続されたLEDが徐々に明るくなり、最大まで明るくなったら徐々に暗くなるプログラムです。
+
+GroveソケットのD2と書かれたところにGrove LEDモジュールを接続してください。
+
+//emlist[NefryBT_GROVE_PWM_LED][LEDの明るさを変えるプログラム]{
 //Groveケーブルを接続するGroveコネクターを１つ選んで#define文に記載してください。
 // Nefry BT無印の場合： D2, A0, A2 (注：D0は使えません）
 // Nefry BT R2の場合： D0, D2, D5, A1  (注：A0を使うときはA1を記載します)
@@ -38,10 +51,10 @@ Nefry BTではLEDCライブラリでPWMを制御します。LEDCではこの2つ
 #define LEDC_RESOLUTION_BITS 10
 #define LEDC_FREQUENCY 50
 
-const int32_t min = 0;
-const int32_t max = 1023;
-const int32_t delta = 32;
-int32_t i;
+const int min = 0;
+const int max = 1023;
+const int delta = 32;
+int i;
 
 void setup() {
   Serial.print("PIN = ");
@@ -62,21 +75,31 @@ void loop() {
 }
 //}
 
-@<code>{setup()} ルーチン内で @<code>{ledcSetup(...)} を実行して、チャンネル、周波数、目盛数を設定し、
-@<code>{ledcAttachPin()}でGPIOピンとチャンネルを結びつけます。
+=== プログラム説明（LEDの明るさ制御）
+
+プログラムの説明をしていきます。
+
+@<code>{setup()} ルーチン内で @<code>{ledcSetup(...)} を実行して、チャンネル、周波数、目盛数を設定します。
+
+@<code>{ledcAttachPin()}でGPIOピンと上で設定したチャンネルを結びつけます。
+
 次に、@<code>{loop()} ルーチン内で、@<code>{ledcWiter(LEDC_CHANNEL, i)}を使ってLEDの明るさを設定しています。
 @<b>{i}を増減することでLEDの明るさを制御しています。
 
 
 === サーボモーターモジュール
-サーボモーターモジュールはPWMで制御するモジュールです。サーボモーターはPWMで指定された値に応じて軸の角度が変わる特殊なモーターです。
+サーボモーターモジュールはPWMで制御するモジュールです。
+
+サーボモーターはPWMで指定された値に応じて軸の角度が変わる特殊なモーターです。
 通常180度程度の可動域があります。
 
-//image[210-GROVE-MODULE-SERVO-Fukui][Groveサーボモーターモジュール][scale=0.4]
+//image[210-GROVE-MODULE-SERVO-Fukui][Groveサーボモーターモジュール][scale=0.4]{
+//}
 
- * Groveサーボモーター https://www.switch-science.com/catalog/1858/
+ * Groveサーボモーター @<href>{https://www.switch-science.com/catalog/1858/}
 
 一般的には、周期は10〜20msでパルス幅は0.5ms〜2.5msぐらいのようですが、機種による差が大きく、また個体による差もあるようです。
+
 筆者が持っているサーボモーターでは、次のようなパラメーターで動作するようです。
 
 //image[220-PWM-LEDC-Servo-Parameter][サーボモーターのパラメータ例][scale=0.7]
@@ -84,8 +107,8 @@ void loop() {
 ==== サーボモーターのプログラム
 Nefry BTに装備されているスイッチを押すたびに、0°、90°、180°の位置への移動を繰り返すプログラムです。
 
-//list[NefryBT_GROVE_Servo][サーボモーターのプログラム]{
-#include <Nefry.h>
+GroveソケットのD2と書かれたところにサーボモーターを接続してください。
+//emlist[NefryBT_GROVE_Servo][サーボモーターのプログラム]{
 //Groveケーブルを接続するGroveコネクターを１つ選んで#define文に記載してください。
 // Nefry BT無印の場合： D2, A0, A2 (注：D0は使えません）
 // Nefry BT R2の場合： D0, D2, D5, A1  (注：A0を使うときはA1を記載します)
@@ -102,14 +125,14 @@ Nefry BTに装備されているスイッチを押すたびに、0°、90°、18
 //  30/1024*20ms = 0.59ms
 //  77/1024*20ms = 1.50ms
 // 122/1024*20ms = 2.38ms
-uint32_t pulse[3] = {30, 77, 122};
+int pulse[3] = {30, 77, 122};
 int n = 0;
 
 void setup() {
   ledcSetup(LEDC_CHANNEL, LEDC_FREQUENCY, LEDC_RESOLUTION_BITS);
   ledcAttachPin(PIN, LEDC_CHANNEL);
-  Serial.println(pulse[n]);
-  ledcWrite(0, pulse[n]);
+  Serial.println(pulse[0]);
+  ledcWrite(LEDC_CHANNEL, pulse[0]);
   Nefry.enableSW();
 }
 
@@ -117,14 +140,19 @@ void loop() {
   if (Nefry.readSW()) {
     n = (n+1) % 3;
     Serial.println(pulse[n]);
-    ledcWrite(0, pulse[n]);
+    ledcWrite(LEDC_CHANNEL, pulse[n]);
   }
 }
 //}
 
-配列宣言 @<b>{pulse[3]}で、0°、90°、180°のパルス幅を覚える配列を定義しています。
-@<code>{setup()} ルーチン内で @<b>{ledcSetup(...)} を実行して、チャンネル、周波数、目盛数を設定し、
-@<b>{ledcAttachPin()}でGPIOピンとチャンネルを結びつけます。@<b>{ledcWrite()}で0°のパルス幅を
-サーボモーターに設定しています。
+=== プログラム説明（サーボモーター制御）
 
-次に、@<b>{loop()} ルーチン内では、スイッチが押される度に90°、180°、0°のパルス幅を順に設定しています。
+配列宣言 @<code>{pulse[3]}で、0°、90°、180°のパルス幅を覚える配列を定義しています。
+
+@<code>{setup()} ルーチン内で @<code>{ledcSetup(...)} を実行して、チャンネル、周波数、目盛数を設定します。
+
+@<code>{ledcAttachPin()}でGPIOピンと上で設定したチャンネルを結びつけます。
+次に@<code>{ledcWiter(LEDC_CHANNEL, i)}で0度にサーボモーターを初期化します。
+
+
+@<code>{loop()} ルーチン内では、スイッチが押される度に@<code>{ledcWiter(LEDC_CHANNEL, i)}で90°、180°、0°のパルス幅を順に設定しています。

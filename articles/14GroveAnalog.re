@@ -110,13 +110,14 @@ Nefry BT無印ではGroveコネクターA2、Nefry BT R2ではA0（実際にはA
 ADC2の制約について詳しい情報はこちらを参照してください。
 
 @<href>{http://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/adc.html}
+
 ====[/column]
 
 
 == アナログ温度センサーモジュール
 アナログ温度センサーモジュールはアナログ入力モジュールです。
 
-//image[260-GROVE-MODULE-TEMPERATURE-Fukui][Groveアナログ温度センサー][scale=0.4]
+//image[260-GROVE-MODULE-TEMPERATURE-Fukui][Groveアナログ温度センサー][scale=0.2]
 
  * Groveアナログ温度センサー @<href>{https://www.switch-science.com/catalog/806/}
 

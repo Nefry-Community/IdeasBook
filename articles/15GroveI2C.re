@@ -9,33 +9,34 @@
 I2C接続ではSCLとSDAという2本の信号線を使います。
 Nefry BTでは、Grove D0コネクターにセンサーを繋いで使用します。
 
-== I2C温度・湿度センサーモジュールのプログラム
-Seeed Studio社が公開しているプログラムをそのまま使ってみます。
+== I2C温度・湿度センサー制御ライブラリの入手とセットアップ
+Seeed Studio社が公開しているライブラリを使います。
 Seeed Studio社のGrove WikiのSHT31ページ（http://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/）
 //image[410-WEB-SeeedWiki-SHT31][Seeed Studio社のGrove Wikiページ][scale=0.5]
 の下の方に次のような使い方の説明が記載されています。
 //image[420-WEB-SeeedWiki-SHT31-Library][Libraryへのリンク][scale=0.5]
 「library here」のhereをクリックするとSeeed Studio社のGitHubページが開きます。
 //image[430-WEB-Seeed-GitHub-SHT31][Seed Studio社のGitHubページ][scale=0.9]
-ページ右上の「Clone or download」というプルダウンメニューをクリックして、プログラム一式をダウンロードします。
-ダウンロードしたプログラムのフォルダー構成は次のようになっています。
-//image[440-WEB-Seeed-GitHub-SHT31-File-Tree][温度・湿度センサープログラムのフォルダー構成][scale=0.9]
-「example」というフォルダーを、Nefry BTのプログラムを置いているご自身のフォルダにコピーします。
-次に、「SHT31.cpp」と「SHT31.h」をそのフォルダにコピーします。コピー先のフォルダは次の図のようになります。
-ファイルが３つコピーされていることを確認してください。
-//image[450-My-SHT31-example-folder][コピーしたexampleフォルダー][scale=0.9]
+ページ右上の「Clone or download」というプルダウンメニューをクリックして、zipファイル（Grove_SHT31_Temp_Humi_Sensor-master.zip）
+をダウンロードします。zipファイルにはSHT31を使うためのライブラリとサンプルプログラムが含まれています。
 
-「example.ino」ファイルを開くと、Arduino IDEの画面が開きます。タブが3つあり、フォルダー内のファイルが
-タブとして表示されていることを確認してください。
-//image[460-IDE-SHT31-Original][SHT31プログラムのArduino IDE画面][scale=0.9]
+zipファイルをArduino IDEにインストールします。IDEのメニュー [スケッチ]>[ライブラリをインクルード]>[.ZIP形式のライブラリをインストール...] を選択し、
+//image[500-menu-include-library][ライブラリの取り込み][scale=0.7]
+ファイル選択画面で先ほどダウンロードしたzipファイルを指定します。これで取り込みは完了です。
+//image[510-file-chooser][ファイル選択画面][scale=0.7]
 
-Nefry BT用にプログラムを変更を行います。変更は2箇所だけです。
+== I2C温度・湿度センサーモジュールのプログラム
+IDEメニュー [ファイル]>[スケッチ例]>[Grove_SHT31_Temp_Humi_Sensor-master]>[example]を選択すると、SHT31のサンプルプログラ example.inoの画面が開きます。
+//image[520-Open-Example][exampleを開く]
+//image[530-IDE-SHT31-Original][SHt31サンプルプログラム][scale=0.9]
 
- * 冒頭に @<code>{#include <Nefry.h>}を追加します。
- * @<code>{setup()}ルーチン内にある@<code>{Serial.begin(9600);}と@<code>{while(!Serial);}をコメントアウトします。
+次にNefry BT用にプログラムの変更を行います。変更は2箇所だけです。
+
+ 1. 冒頭に @<code>{#include <Nefry.h>}を追加します。
+ 2. @<code>{setup()}ルーチン内にある@<code>{Serial.begin(9600);}と@<code>{while(!Serial);}をコメントアウトします。
 変更後のプログラムはこうなります。
 
-//image[470-IDE-SHT31-Nefry][変更後のSHT31プログラム][scale=0.9]
+//image[540-IDE-SHT31-Nefry][変更後のSHT31サンプルプログラム][scale=0.9]
 
 //emlist[NefryBT_GROVE_SHT31][I2C温度・湿度計のプログラム]{
 #include <Nefry.h>
@@ -66,7 +67,10 @@ void loop() {
 }
 //}
 
-プログラムを実行すると、シリアルモニターに測定結果が表示されます。
+次に、IDEメニュー [ファイル]>[名前を付けて保存] を使って別の名前で保存します。
+//image[550-menu-save-as][別の名前で保存]
+
+このプログラムを実行すると、シリアルモニターに測定結果が表示されます。
 
 //image[480-MONITOR-SHT31][SHT31プログラムのシリアルモニター表示例][scale=0.9]
 

@@ -9,7 +9,7 @@ ArduinoやRaspberry Piといったハードウェアでは、ボタン、温度�
 
 Nefry BTでは、上記のジャンバーワイヤで接続もできますが、特徴としてGroveコネクターがあるのでセンサーやアクチュエーターを手軽に接続して試すことができます！
 
-この章では、Groveというモジュールを使ってNefryでどのようなことができるのか紹介していきます。
+この章では、Groveというモジュールを使ってNefry BTでどのようなことができるのか紹介していきます。
 
 == Groveシステムとは
 
@@ -57,10 +57,7 @@ Nefry BTにGroveモジュールをつなげて使用するには、どのGrove�
 Groveコネクター名を使います。ただし1つだけ例外があります。Nefry BT R2のA0コネクターを使うときは代わりにA1を指定します。
 これは基板に印刷されているコネクター名と実際に配線されているピン名が異なっているためです。
 
-//image[030_NefryBT-R1-GROVE-PIN][Nefry BT無印のGroveコネクター名][scale=0.5]{
-//}
-
-//image[040_NefryBT-R2-GROVE-PIN][Nefry BT R2のGroveコネクター名][scale=0.5]{
+//image[045_NefryBT-R1-R2-GROVE-PIN][Nefry BT R1とR2のGroveコネクター名][scale=0.9]{
 //}
 
 
@@ -79,10 +76,7 @@ Nefry BT上の各Groveコネクターにある端子がどのGPIOに接続され
 背景が紺色になっている数字がGPIOピン番号です。Nefry BT無印とR2で、接続されているGPIOのピン番号は同一ですが、
 A0、D5、A2といったピン名が異なっているのがわかります。
 
-//image[050_NefryBT-R1-GROVE-GPIO-PIN][Nefry BT無印GroveコネクタのGPIOピン番号対応関係][scale=0.7]{
-//}
-
-//image[060_NefryBT-R2-GROVE-GPIO-PIN][Nefry BT R２GroveコネクタのGPIOピン番号対応関係][scale=0.7]{
+//image[065_NefryBT-R1-R2-GROVE-GPIO-PIN][Nefry BT R２GroveコネクタのGPIOピン番号対応関係][scale=0.9]{
 //}
 
 
@@ -155,4 +149,4 @@ I2C（アイ・スクエア・シー）というプロトコルで通信する�
 
  などがあります。
 
-この本書では取り扱いません。
+この本では取り扱いません。

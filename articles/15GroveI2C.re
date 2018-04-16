@@ -18,7 +18,7 @@ Seeed Studio社が公開しているライブラリをセットアップして�
 //}
 
 Seeed Studio社のGrove WikiのSHT31ページ（@<href>{http://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/}）に使い方の説明が記載されています。
-//image[420-WEB-SeeedWiki-SHT31-Library][Libraryへのリンク][scale=0.5]{
+//image[420-WEB-SeeedWiki-SHT31-Library][Libraryへのリンク][scale=0.9]{
 //}
 
 「library here」のhereをクリックするとSeeed Studio社のGitHubページが開きます。

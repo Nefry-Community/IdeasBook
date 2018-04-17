@@ -48,7 +48,7 @@ IDEのメニュー [スケッチ]>[ライブラリをインクルード]>[.ZIP�
 
 1秒ごとに温度湿度データをシリアルモニタに送るプログラムになります。
 
-//emlist[NefryBT_GROVE_SHT31][I2C温度・湿度計のプログラム]{
+//emlist[I2C温度・湿度計のプログラム]{
 #include <Arduino.h>
 #include <Wire.h>
 #include "SHT31.h"

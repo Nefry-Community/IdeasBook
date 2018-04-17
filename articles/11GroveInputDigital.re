@@ -12,7 +12,7 @@
 
 GroveソケットのD2と書かれたところにGroveモジュールを接続してください。
 
-//emlist[NefryBT_GROVE_Button][ボタンモジュールのプログラム]{
+//emlist[ボタンモジュールのプログラム]{
 //Groveケーブルを接続するGroveコネクターを１つ選んで#define文に記載してください。
 // Nefry BT無印の場合： D0, D2, A0, A2　(注：D0を使うことはできません。)
 // Nefry BT R2の場合： D0, D2, D5, A1  (注：A0を使うときはA1を記載します。)

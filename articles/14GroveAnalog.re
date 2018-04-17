@@ -21,7 +21,7 @@ Nefry BT無印に接続する場合はA2、Nefry BT R2に接続する場合はA1
 
 Nefry BT無印の場合はコードの@<code>{#define PIN A1}を@<code>{#define PIN A2}に書き換えてください。
 
-//emlist[Nefry_GROVE_RotaryAngleSensor][ボリュームのプログラム]{
+//emlist[ボリュームのプログラム]{
 //Groveケーブルを接続するGroveコネクターを１つ選んで#define文に記載してください。
 // Nefry BT無印の場合： A2
 // Nefry BT R2の場合： A1  (注：A0を使うときはA1を記載します。)
@@ -70,7 +70,7 @@ Arduino IDEに装備されている@<b>{「シリアルプロッタ」}を使い
 
 //image[250-PLOTTER-VOLUME][シリアルプロッター表示例][scale=0.9]
 
-==== ボリュームモジュールのGrove端子ごとの動作状況
+==== ボリュームモジュールのGroveコネクターごとの動作状況
 ボリュームモジュールの動作状況を次の表にまとめました。
 
 //table[VolumeProgramTestResult][ボリュームプログラム動作状況（Nefry BT無印）]{
@@ -130,8 +130,7 @@ ADC2の制約について詳しい情報はこちらを参照してください�
 
 === アナログ温度センサーモジュールのプログラム
 
-//emlist[NefryBT_GROVE_AnalogTemperatureSensor][Nefry BT R2向けに変更したアナログ温度センサープログラム]{
-#include <Nefry.h>
+//emlist[Nefry BT R2向けに変更したアナログ温度センサープログラム]{
 #include <math.h>
 const int B = 4275;           // B value of the thermistor
 const int R0 = 100000;        // R0 = 100k
@@ -167,7 +166,7 @@ void loop()
 
 なんとなくそれらしい温度が表示されていますが、Arduinoにこの温度センサーを接続した時より1〜2度低いです。
 
-Arduinoのプログラムは5Vでの動作を前提としているので、3.3Vだと少し定数の変更だと思われます。
+Arduinoのプログラムは5Vでの動作を前提としているので、3.3Vだと少し定数の変更が必要だと思われます。
 
 このあたりがアナログセンサーを使うときの難しさです。数値の揺らぎの原因がなにかを切り分けるのは大変です。
 

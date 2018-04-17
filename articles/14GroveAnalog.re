@@ -21,7 +21,7 @@ Nefry BT無印に接続する場合はA2、Nefry BT R2に接続する場合はA1
 
 Nefry BT無印の場合はコードの@<code>{#define PIN A1}を@<code>{#define PIN A2}に書き換えてください。
 
-//emlist[ボリュームのプログラム]{
+//emlist{
 //Groveケーブルを接続するGroveコネクターを１つ選んで#define文に記載してください。
 // Nefry BT無印の場合： A2
 // Nefry BT R2の場合： A1  (注：A0を使うときはA1を記載します。)
@@ -130,7 +130,7 @@ ADC2の制約について詳しい情報はこちらを参照してください�
 
 === アナログ温度センサーモジュールのプログラム
 
-//emlist[Nefry BT R2向けに変更したアナログ温度センサープログラム]{
+//emlist{
 #include <math.h>
 const int B = 4275;           // B value of the thermistor
 const int R0 = 100000;        // R0 = 100k

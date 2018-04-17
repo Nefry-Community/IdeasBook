@@ -40,7 +40,7 @@ Groveモジュールとハードウェア間の通信方式の違いや、用途
 
 それぞれの章を参考にしてください。
 
-//image[011_button-touch-relay][デジタルモジュールの例][scale=0.7]{
+//image[011_button-touch-relay][デジタルモジュールの例][scale=0.6]{
 //}
 
 ==== PWMモジュール
@@ -53,7 +53,7 @@ PWM（Pulse Width Modulation）はデジタル信号が０になっている時�
 
 @<chap>{13GroveOutputPWM}を参考にしてください。
 
-//image[012_LED-servo][PWMで制御するモジュールの例][scale=0.7]{
+//image[012_LED-servo][PWMで制御するモジュールの例][scale=0.6]{
 //}
 
 ==== アナログモジュール
@@ -69,7 +69,7 @@ Nefry BTの場合は入出力値は0V-3.3Vを0-4095の間の数値で表現さ�
 
 @<chap>{14GroveAnalog}を参考にしてください。
 
-//image[013_temp-light-sound][アナログモジュールの例][scale=0.7]{
+//image[013_temp-light-sound][アナログモジュールの例][scale=0.6]{
 //}
 
 ==== I2Cモジュール
@@ -113,6 +113,16 @@ Groveモジュールの情報はSeeed Studio社のGroveシステムのサイト�
 
 日本語の情報も検索すると出てくるものもあるので、そちらを参考にするのもよいでしょう！
 
+====[column] Groveモジュールの動作電圧
+
+Groveモジュールの動作電圧は5Vが基本です。
+
+しかし、Nefry BTのGroveコネクターが供給する電圧は3.3Vなので、すべてのGroveモジュールは動かないですが、多くのGroveモジュールが3.3Vに対応しています。
+
+必ずGroveモジュールを購入する際に、販売店のサイトや本家のサイトで動作電圧を確かめるようにしましょう。
+
+====[/column]
+
 ====[column] Nefry BTのGroveコネクターとGPIOピンの対応関係
 
 Groveシステムは４線のGroveケーブルを使います。4本の線の役割は次のとおりです。
@@ -141,12 +151,4 @@ Nefry BT R2の右下のGroveコネクターの黄色ピンが「A0」ではな�
 
 
 
-====[column] Groveモジュールの動作電圧
 
-Groveモジュールの動作電圧は5Vが基本です。
-
-しかし、Nefry BTのGroveコネクターが供給する電圧は3.3Vなので、すべてのGroveモジュールは動かないですが、多くのGroveモジュールが3.3Vに対応しています。
-
-必ずGroveモジュールを購入する際に、販売店のサイトや本家のサイトで動作電圧を確かめるようにしましょう。
-
-====[/column]

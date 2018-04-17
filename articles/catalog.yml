@@ -3,24 +3,21 @@ PREDEF:
 
 # この順で記事が生成される
 CHAPS:
-  - 1easyNavi.re:
+  - Grove編:
     - 10StartGrove.re
     - 11GroveInputDigital.re
     - 12GroveOutputDigital.re
     - 13GroveOutputPWM.re
     - 14GroveAnalog.re
     - 15GroveI2C.re
+
+  - Nefry + α編:
     - 14Display.re
-  - 2createNavi.re:
     - 21Train.re
-    - 22a100yenShop.re
-    - 23Water.re
-  - 3Network.re:
+
+  - インターネットサービス連携編:
     - 31Ambient.re
-    - 32AWS.re
-    - 33Azure.re
     - 34IBM.re
-    - 35Nodered.re
     - 36NefryCloud.re
     - 37Fastsensing.re
     - 38Thingspeak.re

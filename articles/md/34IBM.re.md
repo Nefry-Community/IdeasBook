@@ -1,60 +1,50 @@
-= IBM Watson IoT Platformにつないでみる
+この章では、NefryBTをIBM Watson IoT Platform (QuickStart) にデータ送信し可視化します。
 
-この章では、NefryBTをIBM Watson IoT Platform （QuickStart） にデータ送信し可視化します。
+## 今回の仕組み
 
-== 今回の仕組み
+今回の仕組みです。
 
-//image[34IBM_01][今回の仕組み][scale=0.8]{
-//}
+![今回の仕組み](34IBM_01.png)
 
-このようにNefry BTの内蔵スイッチを押すとランダム値を IBM Watson IoT Platform （QuickStart） にデータ送信し、可視化をします。
+このようにNefry BTの内蔵スイッチを押すとランダム値を IBM Watson IoT Platform (QuickStart) にデータ送信と可視化をします。
 
+## PubSubClientのダウンロード
 
-== PubSubClientのダウンロード
+IBM Watson IoT Platform ではMQTTで接続する必要があります。MQTT通信をするために、今回はPubSubClientライブラリを採用します。
 
-IBM Watson IoT Platform ではMQTTで接続する必要があります。
+[PubSubClientライブラリ](https://github.com/knolleary/pubsubclient)
 
-MQTT通信をするために、今回はPubSubClientライブラリを採用します。
-
-@<href>{https://github.com/knolleary/pubsubclient,PubSubClientライブラリ}
-
-//image[34IBM_02][PubSubClientライブラリのGitHub][scale=0.8]{
-//}
+![PubSubClientライブラリのGitHub](34IBM_02.png)
 
 こちらをダウンロードしてきます。
 
-//image[34IBM_03][ZIP形式のライブラリをインストール][scale=0.8]{
-//}
+![ZIP形式のライブラリをインストール](34IBM_03.png)
 
-@<tt>{スケッチ} >@<tt>{ライブラリをインクルード} > @<tt>{ZIP形式のライブラリをインストール} でPubSubClientライブラリをインストールします。
+```スケッチ``` >```ライブラリをインクルード``` > ```ZIP形式のライブラリをインストール``` でPubSubClientライブラリをインストールします。
 
 これでPubSubClientライブラリが使えるようになります。
 
-== IBM Watson IoT Platform の準備（QuickStart）
+## IBM Watson IoT Platform の準備（QuickStart）
 
 IBM Watson IoT PlatformのQuickStartページでデータを待ちます。
 
-@<href>{https://quickstart.internetofthings.ibmcloud.com/#/,IBM Watson IoT Platform}
+[IBM Watson IoT Platform](https://quickstart.internetofthings.ibmcloud.com/#/)
 
-//image[34IBM_04][QuickStartページ][scale=0.8]{
-//}
+![QuickStartページ](34IBM_04.png)
 
 IBM Watson IoT PlatformのQuickStartページにアクセスします。
 
-//image[34IBM_05][デバイスIDを入力][scale=0.8]{
-//}
+![デバイスIDを入力](34IBM_05.png)
 
-IBM ご利用条件に同意します をチェックして、デバイスIDには今回使う @<tt>{NefryBT_123456789} を記入して待っておきます。
+IBM ご利用条件に同意します をチェックして、デバイスIDには今回使う ```NefryBT_123456789``` を記入して待っておきます。
 
 デバイスIDは後ほど設定するNefry BTのプログラムで設定するデバイスIDと一致させるので間違えないようにしましょう。
 
-== プログラムを書き込みます
-
+## プログラムを書き込みます
 
 以下をNefry BTに書き込みます。
 
-
-//emlist{
+```c
 #include <Nefry.h>
 #include <WiFiClient.h>
 #include <PubSubClient.h>
@@ -116,30 +106,24 @@ void loop() {
     }
   }
 }
-//}
+```
 
-== 動かしてみる
+## 動かしてみる
 
 Wi-Fiの接続を確認したうえで、内蔵スイッチを何度か押して、さきほど、表示していたIBM Watson IoT Platformの画面を確認してみましょう。
 
-//image[34IBM_06][ボタンを押した時のグラフの様子][scale=0.8]{
-//}
+![ボタンを押した時のグラフの様子](34IBM_06.jpg)
 
 このようにデータが送信されています！
 
-//image[34IBM_07][可視化されたグラフ][scale=0.8]{
-//}
+![可視化されたグラフ](34IBM_07.png)
 
 送信した時間やデータの内容など簡単に確認することができます。
 
-== 広げていこう
+## 広げていこう
 
-IBM Watson IoT Platform （QuickStart） にデータ送信と可視化できました。
+IBM Watson IoT Platform (QuickStart) にデータ送信と可視化できました。IBM Watson IoT Platformに接続できると、IBM Cloudのさまざまなサービスに接続することができるため、IoTをきっかけに出来ることが広がります。
 
-IBM Watson IoT Platformに接続できると、IBM Cloudのさまざまなサービスに接続することができるため、IoTをきっかけに出来ることが広がります。
+たとえば、IBM Watson IoT Platformをきっかけにしてデータベースにデータを保存したのちに分析したり、Watson Text to Speechと連携してセンサーの数値に応じた音声を再生するなど様々なことができます。
 
-たとえば、IBM Watson IoT Platformをきっかけにしてデータベースにデータを保存したのちに分析したり、Watson Text to Speechと連携してセンサーの数値に応じた音声を再生するなどさまざまなことができます。
-
-IBM Watson IoT Platform （QuickStart）を試したあとは、IBM Cloudライト・アカウントに登録してみましょう。
-
-無料の範囲内でもいろいろなサービスが試すことができます。
+IBM Watson IoT Platform (QuickStart) を試したあとは、IBM Cloudライト・アカウントに登録してみましょう。無料の範囲内でもいろいろなサービスが試すことができます。

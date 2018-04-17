@@ -4,36 +4,36 @@ Fastsensing（@<href>{https://fastsensing.com/ja/}）は、専用のデバイス
 
 この章では、NefryからFastSensingライブラリをつかって、Fastsensingにデータを送り、それを可視化する方法を紹介します。
 
-//image[fastsensing_top][Fastsensingのホームページ]{
+//image[fastsensing_top][Fastsensingのホームページ][scale=0.8]{
 //}
 
 == アカウントをつくろう
 
 ホームページ上部の@<tt>{アカウント作成}から、アカウントを作ります。
 
-//image[fastsensing_create_account][アカウント作成]{
+//image[fastsensing_create_account][アカウント作成][scale=0.8]{
 //}
 
 アカウント作成後に、コンソール画面の@<tt>{デバイス}タブなかに@<tt>{デバイスの登録}というボタンがありますが、こちらはファストセンシング対応デバイスの登録専用になっています。
 
 通常は専用のデバイスからセンサーデータをアップロードするのですが、今回のNefry BTからのデータのアップロードを行うため、ここのメニューは使いません。
 
-//image[fastsensing_add_device][今回は「ファストセンシング対応デバイスの登録」は行わない]{
+//image[fastsensing_add_device][今回は「ファストセンシング対応デバイスの登録」は行わない][scale=0.8]{
 //}
 
 ファストセンシング対応デバイスの登録代わりに、ファストセンシング・ディベロッパー・プログラム（@<href>{https://fastsensing.com/ja/developer/}）をつかって仮想のデバイスを登録して、さまざまなマイコンボードからデータをアップロードすることができるようになります。
 
-//image[fastsensing_developer_program][ファストセンシング・ディベロッパー・プログラム]{
+//image[fastsensing_developer_program][ファストセンシング・ディベロッパー・プログラム][scale=0.8]{
 //}
 
 ファストセンシング・ディベロッパー・プログラムのページ上の@<tt>{スタブデバイスの追加}のリンクから、Fastsensingのコンソールに遷移でき、仮想のデバイスを登録することができます。
 
-//image[fastsensing_add_stub_device][スタブデバイスの追加]{
+//image[fastsensing_add_stub_device][スタブデバイスの追加][scale=0.8]{
 //}
 
 ここから@<tt>{スタブデバイス}を追加すると、1つのデバイスに対して3つの独立したチャネルが割り当てられて、それぞれのチャネルに対してセンサーデータをアップロードすることができます。
 
-//image[fastsensing_detail][スタブデバイスの詳細]{
+//image[fastsensing_detail][スタブデバイスの詳細][scale=0.8]{
 //}
 
 コンソール（@<href>{https://console.fastsensing.com/devices}）に登録した@<tt>{スタブデバイス}が表示されているので、それを選択するとデバイスの詳細画面が表示されます。
@@ -46,7 +46,7 @@ Nefry BTのFastsensingライブラリでは、これらのトークンをつか�
 == データを送ってみる
 
 
-A0ピンのアナログ入力値を読み取りアップロードしてみましょう。
+A0ピンのアナログ入力値を読み取り、そのデータをアップロードしてみましょう。
 
 
 //emlist{
@@ -87,39 +87,30 @@ void loop() {
 
 @<tt>{setValue()}関数で、送り先のチャネルと、チャネルに送るデータをセットして、@<tt>{push()}でFastsensingに送信します。
 
-
 == 送ったデータを見てみる
-
 
 送ったデータはFastsensingのサイト上でグラフ化ができます。
 
-
-
-//image[fastsensing_create_view][ビューの新規作成]{
+//image[fastsensing_create_view][ビューの新規作成][scale=0.8]{
 //}
-
-
-
 
 登録した@<tt>{スタブデバイス}のチャンネルの詳細画面から、@<tt>{ビュー}メニューで可視化の方法を選択できます。
 
+今回はグラフを選択しましょう！
 
-
-//image[fastsensing_view][グラフ化したデータ]{
+//image[fastsensing_view][グラフ化したデータ][scale=0.8]{
 //}
 
+このようなグラフを表示されるのを確認できます。
 
+FastSensingではこれ以外にも複数のグラフや図を作成することができます。
 
-
-例えば、このメニューで@<tt>{グラフ}を選ぶと、このようなグラフを表示することができます。
-
-
-//image[fastsensing_image_map_view][イメージマップの例]{
+//image[fastsensing_image_map_view][イメージマップの例][scale=0.8]{
 //}
 
-
-//image[fastsensing_panel_view][パネルの例]{
+//image[fastsensing_panel_view][パネルの例][scale=0.8]{
 //}
 
+ほかでは、なかなかない図の上にピンを置ける@<tt>{イメージマップ}や一目で分かる@<tt>{パネル}など特徴的な可視化があるほか、基本的な@<tt>{リアルタイムグラフ}や@<tt>{表}もあります。
 
-@<tt>{グラフ}の他にも、@<tt>{リアルタイムグラフ}、@<tt>{イメージマップ}、@<tt>{パネル}、@<tt>{表}があります。色々な方法で可視化にチャレンジしてみて下さい！
+色々な方法で可視化にチャレンジしてみましょう！

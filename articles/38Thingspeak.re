@@ -92,15 +92,17 @@ ThingSpeakを制御するために@<code>{NefryThingSpeak.h}をincludeします�
 
 データの可視化は、チャネルの詳細ページから可能です。
 
-//image[thingspeak_add_visualization][ThingSpeakのAPIキー][scale=0.8]{
+//image[thingspeak_add_visualization][Add Visualizationsをクリック][scale=0.7]{
 //}
 
 @<tt>{Add Visualizations}というメニューがあるので、それを押すだけ！
 
 これだけでグラフが表示されます！
 
-//image[thingspeak_visualization][ThingSpeakのAPIキー][scale=0.8]{
+//image[thingspeak_visualization][グラフ化されました！][scale=0.7]{
 //}
 
 
 簡易的ではありますが、フィールドに送られたデータを簡単に可視化できました。
+
+ThingSpearkには、ほかにもいろんな機能がありますので、使い倒してみてください！

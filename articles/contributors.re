@@ -22,7 +22,7 @@ Nefry BTを使った電車遅延チェックガジェットを作るハンズオ
 @<b>{京急は神。}
 
 ==== @<chap>{20Display} 下島健彦 / @t_shimojima
-IoTデーター可視化サービス「Ambient」 https://ambidata.io の開発者。
+IoTデーター可視化サービス「Ambient」 @<href>{hhttps://ambidata.io} の開発者。
 
 いろいろなデーターを測ってグラフ化している。
 

@@ -1,4 +1,4 @@
-= Groveのアナログ入力（ボリュームと温度センサー）
+= Groveのアナログ入力（ボリュームと温度センサ）
 
 == ボリュームモジュール
 Groveボリュームモジュール（可変抵抗モジュール）はアナログ入力モジュールです。
@@ -106,12 +106,12 @@ ADC2の制約について詳しい情報は下記を参照してください。
 ====[/column]
 
 
-== アナログ温度センサーモジュール
-アナログ温度センサーモジュールはアナログ入力モジュールです。
+== アナログ温度センサモジュール
+アナログ温度センサモジュールはアナログ入力モジュールです。
 
-//image[260-GROVE-MODULE-TEMPERATURE-Fukui][Groveアナログ温度センサー][scale=0.2]
+//image[260-GROVE-MODULE-TEMPERATURE-Fukui][Groveアナログ温度センサ][scale=0.2]
 
- * Groveアナログ温度センサー @<href>{https://www.switch-science.com/catalog/806/}
+ * Groveアナログ温度センサ @<href>{https://www.switch-science.com/catalog/806/}
 
 ボリュームモジュールと同じプログラムで測定値を取得できます。
 

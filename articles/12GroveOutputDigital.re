@@ -34,7 +34,7 @@ LEDには＋、－の極性があります。
 Nefry BT上のGroveソケットのD2と書かれたところに、先ほどセットアップしたLEDモジュールを接続してください。
 
 //emlist{
-//Groveケーブルを接続するGroveコネクターを１つ選んで#define文に記載してください。
+//Groveケーブルを接続するGroveコネクタを１つ選んで#define文に記載してください。
 // Nefry BT無印の場合： D2, A0, A2 (注：D0は使えません）
 // Nefry BT R2の場合： D0, D2, D5, A1  (注：A0を使うときはA1を記載します。)
 #define PIN D2
@@ -74,7 +74,7 @@ Nefry BTに装備されているスイッチと連動させるプログラムに
 スイッチを押すと1秒間LEDが点灯するプログラムにします。
 
 //emlist{
-//Groveケーブルを接続するGroveコネクターを１つ選んで#define文に記載してください。
+//Groveケーブルを接続するGroveコネクタを１つ選んで#define文に記載してください。
 // Nefry BT無印の場合： D2, A0, A2 (注：D0は使えません）
 // Nefry BT R2の場合： D0, D2, D5, A1  (注：A0を使うときはA1を記載します)
 #define PIN D2

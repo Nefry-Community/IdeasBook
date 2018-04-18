@@ -32,9 +32,9 @@ LEDCライブラリではPWMの2値を指定するために、3つの値を使�
 
 また、LEDCライブラリではどのチャンネルを使うかを指定します。チャンネルは0〜15の16個あります。
 
-=== GroveコネクターごとのPWMの動作状況
+=== GroveコネクタごとのPWMの動作状況
 Nefry BT 無印では、D2, A0, A2でPWMが動作します。
-Nefry BT R2ではD0, D2, D5, A1の全てのGroveコネクターでPWMが動作します。
+Nefry BT R2ではD0, D2, D5, A1の全てのGroveコネクタでPWMが動作します。
 
 == LEDの明るさを制御
 === LEDモジュール
@@ -46,7 +46,7 @@ Nefry BT上のGroveソケットのD2と書かれたところに、LEDモジュ�
 LEDが徐々に明るくなり、最大まで明るくなったら徐々に暗くなるように制御するプログラムです。
 
 //emlist{
-//Groveケーブルを接続するGroveコネクターを１つ選んで#define文に記載してください。
+//Groveケーブルを接続するGroveコネクタを１つ選んで#define文に記載してください。
 // Nefry BT無印の場合： D2, A0, A2 (注：D0は使えません）
 // Nefry BT R2の場合： D0, D2, D5, A1  (注：A0を使うときはA1を記載します)
 #define PIN D2
@@ -115,7 +115,7 @@ Nefry BTに装備されているスイッチを押すたびに、0°、90°、18
 Nefry BT上のGroveソケットのD2と書かれたところに、サーボモータモジュールを接続してください。
 
 //emlist{
-//Groveケーブルを接続するGroveコネクターを１つ選んで#define文に記載してください。
+//Groveケーブルを接続するGroveコネクタを１つ選んで#define文に記載してください。
 // Nefry BT無印の場合： D2, A0, A2 (注：D0は使えません）
 // Nefry BT R2の場合： D0, D2, D5, A1  (注：A0を使うときはA1を記載します)
 #define PIN D2

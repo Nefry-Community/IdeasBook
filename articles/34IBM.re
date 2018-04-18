@@ -1,4 +1,4 @@
-= IBM Watson IoT Platformにつないでみる
+= 「IBM Watson IoT Platform」とセンサデータを連携する
 
 この章では、NefryBTをIBM Watson IoT Platform （QuickStart） にデータ送信し可視化します。
 

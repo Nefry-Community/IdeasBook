@@ -1,4 +1,4 @@
-= Fastsensingにデータを送ってみる
+= 「Fastsensing」とセンサデータを連携する
 
 Fastsensing（@<href>{https://fastsensing.com/ja/}）は、専用のデバイスやマイコンボードからのセンサーデータを受信し、グラフ化や異常検知をしてくれるサービスです。
 

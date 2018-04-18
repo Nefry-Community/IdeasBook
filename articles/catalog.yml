@@ -3,7 +3,7 @@ PREDEF:
 
 # この順で記事が生成される
 CHAPS:
-  - Grove編:
+  - Groveモジュールを使ってみよう:
     - 10StartGrove.re
     - 11GroveInputDigital.re
     - 12GroveOutputDigital.re
@@ -11,11 +11,11 @@ CHAPS:
     - 14GroveAnalog.re
     - 15GroveI2C.re
 
-  - Nefry + α編:
+  - Nefryと組み合わせてみよう:
     - 20Display.re
     - 21Train.re
 
-  - インターネットサービス連携編:
+  - インターネットサービスと連携してみよう:
     - 31Ambient.re
     - 34IBM.re
     - 36NefryCloud.re

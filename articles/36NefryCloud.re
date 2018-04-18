@@ -203,7 +203,7 @@ Webhocksでは次のようなことができます。
   URL：http://cloud.nefry.studio:1880/nefrysetting/setdata
   Method：POST
   Content Type：application/json
-  Body：{"user":"Nefry","key":"123456abcdefg","data":"Nefry"}
+  Body：{"user":"ユーザ名","key":"API Key","data":"Nefry"}
 
   ※Body：{
             "user":"Nefryクラウド登録時のusername",
@@ -214,8 +214,7 @@ Webhocksでは次のようなことができます。
 
 ※MethodがGETの場合
   URL：http://cloud.nefry.studio:1880/nefrysetting/setdata?user=nefry&
-  Wkey=APIKey&data=testdata
-
+  key=APIKey&data=testdata
 //}
 
 上記が記入できたら「Create action」を押します。

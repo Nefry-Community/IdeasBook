@@ -1,4 +1,4 @@
-= ThingSpeakにデータを送ってみる
+= 「ThingSpeak」とセンサデータを連携する
 
 この章では、NefryからThingSpeakライブラリをつかって、ThingSpeakにデータを送り、それを可視化する方法を紹介します。
 

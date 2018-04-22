@@ -1,3 +1,0 @@
-= 11GroveEasy
-
-NefryのGPIOをつかってみよ

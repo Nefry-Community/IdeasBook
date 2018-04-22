@@ -1,3 +1,0 @@
-= 12GroveHard
-
-NefryのGPIOをつかってみよ

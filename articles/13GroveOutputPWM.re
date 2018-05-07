@@ -1,8 +1,8 @@
-= GroveをPWMで制御（サーボモータ）
+= GroveをPWMで制御（LEDとサーボモータ）
 
-この章は、モジュールの紹介ではなくPWMでどのような制御ができるのか紹介していきます。
+この章は、モジュールの紹介ではなくPWM(Pulse Width Modulation)でどのような制御ができるのか紹介していきます。
 
-== PWM（Pulse-with-modulation）とは
+== PWMとは
 PWMの動作の仕組みと、Nefry BTのプログラムでのパラメーター指定方法を説明します。
 
 === PWMの仕組み
@@ -20,7 +20,7 @@ PWMを使う場合、2つの値を指定します。
  * デューティー比
 
 === Nefry BTでPWMを制御する方法
-Nefry BTではLEDCライブラリを使い、PWMを制御します。
+Nefry BTでは、LEDCライブラリを使ってPWMを制御します。
 
 //image[200-PWM-LEDC-Parameter][LEDCで指定する値][scale=0.6]{
 //}
@@ -32,9 +32,9 @@ LEDCライブラリではPWMの2値を指定するために、3つの値を使�
 
 また、LEDCライブラリではどのチャンネルを使うかを指定します。チャンネルは0〜15の16個あります。
 
-=== GroveコネクタごとのPWMの動作状況
+=== PWMが動作するGroveコネクタ
 Nefry BT 無印では、D2, A0, A2でPWMが動作します。
-Nefry BT R2ではD0, D2, D5, A1の全てのGroveコネクタでPWMが動作します。
+Nefry BT R2ではD0, D2, D5, A0(プログラム上ではA1と記載)の全てのGroveコネクタでPWMが動作します。
 
 == LEDの明るさを制御
 === LEDモジュール
@@ -97,7 +97,7 @@ void loop() {
 === サーボモータモジュール
 サーボモータモジュールはPWMで制御するモジュールです。
 
-//image[210-GROVE-MODULE-SERVO-Fukui][Groveサーボモーターモジュール][scale=0.4]{
+//image[210-GROVE-MODULE-SERVO-Fukui][Groveサーボモータモジュール][scale=0.4]{
 //}
 サーボモータはPWMで指定された値に応じて軸の角度が変わる特殊なモータです。
 通常180度程度の可動域があります。
@@ -159,4 +159,4 @@ void loop() {
 @<code>{ledcAttachPin()}でGPIOピンと上で設定したチャンネルを結びつけます。
 次に@<code>{ledcWiter(LEDC_CHANNEL, i)}で0度にサーボモータを初期化します。
 
-@<code>{loop()} ルーチン内では、スイッチが押される度に@<code>{ledcWiter(LEDC_CHANNEL, i)}で90°、180°、0°のパルス幅を順に設定しています。
+@<code>{loop()} ルーチン内では、スイッチが押される度に@<code>{ledcWiter(LEDC_CHANNEL, pulse[n])}で90°、180°、0°のパルス幅を順に設定しています。
